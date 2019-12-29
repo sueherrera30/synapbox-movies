@@ -1,7 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import overrides from './overrides';
 
 const theme = createMuiTheme({
   spacing: 10,
+  overrides,
   palette: {
     primary:{
       main: '#0F28A9',
