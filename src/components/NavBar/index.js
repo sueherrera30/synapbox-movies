@@ -1,27 +1,31 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import PropTypes from 'prop-types';
+import { AppBar } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import logo from '../../assets/images/logo.png';
+import styles from './styles';
+import AutocompleteComponent from '../Autocomplete';
 
-
-const Navbar = () => {
+const Navbar = (props) => {
+  const { classes } = props;
   return (
     <div>
-      <AppBar position="static" color="secondary">
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6">
-             News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
+      <AppBar position="static" color="secondary" className={classes.container}>
+        <div className={classes.imgContainer}>
+          <img src={logo} alt="Logo" />
+          <p className={classes.title} color="primary">Movies</p>
+        </div>
+        <AutocompleteComponent />
       </AppBar>
     </div>
   )
 }
-export default Navbar;
+Navbar.propTypes = {
+  classes: PropTypes.shape({
+    container: PropTypes.string,
+    imgContainer: PropTypes.string,
+    title: PropTypes.string,
+  }).isRequired,
+};
+
+export default withStyles(styles)(Navbar);
