@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Search from '@material-ui/icons/Search';
 
 const AutocompleteComponent = () => {
   // Temporal Data
@@ -15,15 +18,28 @@ const AutocompleteComponent = () => {
   ];
   return (
     <Autocomplete
-          id="free-solo-demo"
-          freeSolo
-          options={topFilms.map(option => option.title)}
-          renderInput={params => (
-            <TextField {...params} label="freeSolo" margin="normal" variant="outlined" fullWidth />
-          )}
+        autocomplete
+        options={topFilms.map(option => option.title)}
+        renderInput={params => (
+          <TextField
+            style={{ fontFamily: 'Gaegu, cursive'}}
+            {...params}
+            label="do you wanna more?"
+            margin="normal"
+            variant="outlined"
+            fullWidth
+          />
+        )}
       />
   )
 }
+
+
+AutocompleteComponent.propTypes = {
+  classes: PropTypes.shape({
+    icon: PropTypes.string,
+  }).isRequired,
+};
 
 export default AutocompleteComponent;
 

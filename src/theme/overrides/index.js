@@ -1,5 +1,9 @@
-import MuiAppBar from './MuiAppBar';
+import MuiAutocomplete from './MuiAutocomplete';
+import MuiTextField from './MuiTextField';
+import MuiInput from './MuiInput';
 
 export default {
-  MuiAppBar,
+  MuiAutocomplete,
+  MuiTextField,
+  MuiInput,
 };

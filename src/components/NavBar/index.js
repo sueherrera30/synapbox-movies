@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
+import { AppBar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import logo from '../../assets/images/logo.png';
 import styles from './styles';
@@ -10,8 +10,11 @@ const Navbar = (props) => {
   const { classes } = props;
   return (
     <div>
-      <AppBar position="static" color="secondary">
-        <img src={logo} alt="Logo" className={classes.img} />
+      <AppBar position="static" color="secondary" className={classes.container}>
+        <div className={classes.imgContainer}>
+          <img src={logo} alt="Logo" />
+          <p className={classes.title} color="primary">Movies</p>
+        </div>
         <AutocompleteComponent />
       </AppBar>
     </div>
@@ -19,7 +22,9 @@ const Navbar = (props) => {
 }
 Navbar.propTypes = {
   classes: PropTypes.shape({
-    img: PropTypes.string,
+    container: PropTypes.string,
+    imgContainer: PropTypes.string,
+    title: PropTypes.string,
   }).isRequired,
 };
 
