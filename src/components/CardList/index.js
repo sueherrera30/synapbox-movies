@@ -28,19 +28,16 @@ const CardList = (props) => {
                   title="Contemplative Reptile"
                 />
                 <CardContent className={classes.cardText}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Title 
-                  </Typography>
+                  <Typography gutterBottom variant="h5" component="h2">Title </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
                     Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                     across all continents except Antarctica
                   </Typography>
+                  <Typography component="p" className={classes.price}>$price</Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.buttonContainer}>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
+                <Button size="small" color="primary">Buy</Button>
               </CardActions>
             </Card>   
           );
@@ -55,6 +52,7 @@ CardList.propTypes = {
     cardsContainer: PropTypes.string,
     cardText: PropTypes.string,
     buttonContainer: PropTypes.string,
+    price: PropTypes.string,
   }).isRequired,
 };
 

@@ -12,7 +12,8 @@ const styles = theme  => ({
     '& button': {
       fontFamily: 'Gaegu, cursive',
       textTransform: 'uppercase',
-      color: theme.palette.secondary.main,
+      background: theme.palette.primary.main,
+      color: 'white',
    },
   },
   cardsContainer: {
@@ -32,7 +33,14 @@ const styles = theme  => ({
       fontFamily: 'Gaegu, cursive',
       color: theme.palette.primary.main,
      },
-  }
+  },
+  price: {
+    display:'flex',
+    justifyContent: 'flex-end',
+    fontFamily: 'Gaegu, cursive',
+    fontSize: '20px',
+    color: `${theme.palette.secondary.main} !important`,
+  },
 });
 
 export default styles;
