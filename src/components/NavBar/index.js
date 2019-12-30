@@ -4,7 +4,7 @@ import { AppBar } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import logo from '../../assets/images/logo.png';
 import styles from './styles';
-import AutocompleteComponent from '../Autocomplete';
+import AutocompleteQueryComponent from '../../containers/AutocompleteQuery';
 
 const Navbar = (props) => {
   const { classes } = props;
@@ -15,7 +15,7 @@ const Navbar = (props) => {
           <img src={logo} alt="Logo" />
           <p className={classes.title} color="primary">Movies</p>
         </div>
-        <AutocompleteComponent />
+        <AutocompleteQueryComponent />
       </AppBar>
     </div>
   )
