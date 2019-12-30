@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
@@ -16,7 +16,6 @@ const AutocompleteComponent = () => {
   ];
   return (
     <Autocomplete
-        autocomplete
         options={topFilms.map(option => option.title)}
         renderInput={params => (
           <TextField
@@ -31,13 +30,11 @@ const AutocompleteComponent = () => {
       />
   )
 }
-
-
-AutocompleteComponent.propTypes = {
-  classes: PropTypes.shape({
-    icon: PropTypes.string,
-  }).isRequired,
-};
+// AutocompleteComponent.propTypes = {
+//   classes: PropTypes.shape({
+//     icon: PropTypes.string,
+//   }).isRequired,
+// };
 
 export default AutocompleteComponent;
 

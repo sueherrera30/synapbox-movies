@@ -12,36 +12,32 @@ import {
   Button,
   Typography } from '@material-ui/core';
 const CardList = (props) => {
-  const { classes } = props;
+  const { classes, items } = props;
+  console.log(items);
   return (
     <Container maxWidth="xl" className={classes.cardsContainer}>
-      {
-        Array.from(Array(12), (e, i) => {
-          return (
-            <Card className={classes.card}>
+       {
+        items.map(item =>  (
+            <Card className={classes.card} key={item.id}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  alt="Contemplative Reptile"
+                  alt="move image"
                   height="140"
-                  image="https://66.media.tumblr.com/f2f9f0457b9319b8921e095ceb91a07f/tumblr_pnhrjeqtVU1wrnpguo1_1280.jpg"
-                  title="Contemplative Reptile"
+                  image={item.image}
                 />
                 <CardContent className={classes.cardText}>
-                  <Typography gutterBottom variant="h5" component="h2">Title </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                  </Typography>
-                  <Typography component="p" className={classes.price}>$price</Typography>
+                  <Typography gutterBottom variant="h5" component="h2">{item.title}</Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">{item.description}</Typography>
+                  <Typography component="p" className={classes.price}>${item.price}</Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions className={classes.buttonContainer}>
                 <Button size="small" color="primary">Buy</Button>
               </CardActions>
-            </Card>   
-          );
-        })
+            </Card>  
+          )
+        )
       }
     </Container > 
   )
