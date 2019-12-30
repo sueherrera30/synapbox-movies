@@ -3,7 +3,7 @@ const styles = theme  => ({
    width:'calc(100%/3 - 80px)',
    margin: theme.spacing(2),
    '& img': {
-    height: '250px',
+    height: '200px',
    },
   },
   buttonContainer: {
