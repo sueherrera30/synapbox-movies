@@ -13,7 +13,6 @@ import {
   Typography } from '@material-ui/core';
 const CardList = (props) => {
   const { classes, items } = props;
-  console.log(items);
   return (
     <Container maxWidth="xl" className={classes.cardsContainer}>
        {

@@ -4,7 +4,7 @@ import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 
 const queryCardList = gql`
-  query getUsers {
+  query getItems {
     items {
       id
       title
