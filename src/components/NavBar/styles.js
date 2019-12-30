@@ -20,6 +20,19 @@ const styles = theme  => ({
     color: theme.palette.primary.main,
     paddingLeft: '10px',
     margin: 0,
+  },
+  icon: {
+    color: theme.palette.primary.main,
+    fontSize: '30px',
+    '&:hover': {
+      color: 'white',
+    }
+  }, 
+  infoContainer: {
+    width: '33.33%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
   }
 });
 

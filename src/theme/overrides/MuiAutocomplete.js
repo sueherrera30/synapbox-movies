@@ -1,6 +1,7 @@
 export default {
   root: {
-  width: '33.33%',
+  width: '100%',
+  marginLeft: '1rem',
   },
   listbox: {
     fontFamily: 'Gaegu, cursive',
