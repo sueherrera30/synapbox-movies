@@ -29,7 +29,7 @@ const styles = theme  => ({
     }
   }, 
   infoContainer: {
-    width: '33.33%',
+    width: '25%',
     height: '100%',
     display: 'flex',
     alignItems: 'center',

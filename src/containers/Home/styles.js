@@ -5,8 +5,11 @@ const styles = theme => ({
     alignItems: 'center',
   },
   icon: {
-    paddingLeft: theme.spacing(2),
+    padding: '0 10px',
     width: '70px',
+  },
+  cart: {
+    background: theme.palette.primary.main,
   },
 });
 

@@ -1,6 +1,6 @@
 const styles = theme  => ({
   card: {
-   width:'calc(100%/3 - 80px)',
+   width:'calc(100%/3 - 40px)',
    margin: theme.spacing(2),
    '& img': {
     height: '200px',
