@@ -1,4 +1,9 @@
 const styles = theme => ({
+  main:{
+    fontFamily: 'Gaegu, cursive',
+    color: 'white', 
+    fontSize: '2rem',
+  },
   title: {
     fontFamily: 'Gaegu, cursive',
     color: 'white',
