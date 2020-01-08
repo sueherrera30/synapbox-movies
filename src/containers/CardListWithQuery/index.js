@@ -1,22 +1,11 @@
 import React from 'react';
 import CardList from '../../components/CardList';
-import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
+import QUERY_CARD_LIST from './gql';
 
-const queryCardList = gql`
-  query getItems {
-    items {
-      id
-      title
-      description
-      image
-      price
-    }
-  }
-`;
 const CardListWithQuery = () => {
   return(
-    <Query query={queryCardList}>
+    <Query query={QUERY_CARD_LIST}>
       {
         ({loading, error, data }) => {
         if (loading) return <p> wait a minute baby </p>;

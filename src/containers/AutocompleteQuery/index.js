@@ -4,7 +4,7 @@ import { Query } from 'react-apollo';
 import AutocompleteComponent from '../../components/Autocomplete';
 
 const AutocompleteQuery = gql`
-  query getItems {
+  query getItemsInAutocomplete {
     items {
       id
       title

@@ -1,11 +1,25 @@
 import React from 'react';
-import ApolloClient from 'apollo-boost';
+import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import './App.css';
 import Home from '../src/containers/Home';
+import { resolvers } from './resolvers';
+
+const cache = new InMemoryCache({})
 
 const client = new ApolloClient({
-  uri: 'https://us1.prisma.sh/john-a-agudelo-e911b8/johnaagudelodb/dev'
+  cache: cache,
+  uri: 'https://us1.prisma.sh/john-a-agudelo-e911b8/johnaagudelodb/dev',
+  clientState: {
+    defaults:{
+      cart:{
+        items:[],
+        total:0,
+        __typename: 'cart',
+      },
+    },
+    resolvers: resolvers,
+  }
 })
 
 function App() {
