@@ -6,9 +6,13 @@ import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import logo from '../../assets/images/logo.png';
 import styles from './styles';
 import AutocompleteQueryComponent from '../../containers/AutocompleteQuery';
+import QUERY_CART_INFO from '../HomeCart/gql';
+import { useQuery } from '@apollo/react-hooks';
 
 const Navbar = (props) => {
   const { classes } = props;
+  const { data } = useQuery(QUERY_CART_INFO);
+
   return (
     <div>
       <AppBar position="static" color="secondary" className={classes.container}>
@@ -17,9 +21,12 @@ const Navbar = (props) => {
           <p className={classes.title} color="primary">Movies</p>
         </div>
         <div className={classes.infoContainer}>
+          <div className={classes.cart}>
+          <span>{data.cart.counter}</span>
           <IconButton>
             <ShoppingCart className={classes.icon} />
           </IconButton>
+          </div>
           <AutocompleteQueryComponent />
         </div>
       </AppBar>
@@ -32,6 +39,7 @@ Navbar.propTypes = {
     imgContainer: PropTypes.string,
     title: PropTypes.string,
     icon: PropTypes.string,
+    cart: PropTypes.string,
     infoContainer: PropTypes.string,
   }).isRequired,
 };

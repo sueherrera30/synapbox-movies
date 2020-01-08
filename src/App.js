@@ -14,7 +14,8 @@ const client = new ApolloClient({
     defaults:{
       cart:{
         items:[],
-        total:0,
+        total: 0,
+        counter: 0,
         __typename: 'cart',
       },
     },

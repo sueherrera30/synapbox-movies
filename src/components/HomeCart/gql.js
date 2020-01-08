@@ -11,6 +11,7 @@ const QUERY_CART_INFO = gql`
         price
       }
       total
+      counter
     }
   }
 `;

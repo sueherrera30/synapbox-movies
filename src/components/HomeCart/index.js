@@ -16,7 +16,7 @@ const HomeCart = (props) => {
       </div>  
       <Typography variant="h5" className={classes.subtitle}>List of selected movies:</Typography>
       <div  className={classes.main}>
-        {data.cart.items.map(item => <p key={item.id}>{item.title}</p>)}
+        {data.cart.items.map(item => <p key={item.id}>- {item.title}</p>)}
         <h4>total:</h4>
         <p>${data.cart.total.toFixed(2)}</p>
       </div>

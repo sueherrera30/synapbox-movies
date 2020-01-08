@@ -33,6 +33,20 @@ const styles = theme  => ({
     height: '100%',
     display: 'flex',
     alignItems: 'center',
+  },
+  cart: {
+    position: 'relative',
+    top: '5px',
+    '& > span':{
+      fontFamily: 'Gaegu, cursive',
+      background: 'white',
+      color: theme.palette.primary.main,
+      position: 'absolute',
+      right: '1rem',
+      top: '-5px',
+      borderRadius: '50%',
+      width: '20px',
+    }
   }
 });
 

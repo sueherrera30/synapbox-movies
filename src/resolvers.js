@@ -13,10 +13,12 @@ export const resolvers = {
           cart: {
              items: cart.items.concat(newItem),
              total: cart.total + newItem.price,
+             counter: cart.counter + 1,
             __typename: 'cart',
           }
         }
       })
+      console.log(cart)
     }
   }
 }
