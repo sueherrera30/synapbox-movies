@@ -6,20 +6,18 @@ export const resolvers = {
     addItemToCart: (_, args, { cache }) => {
     const { cart } = cache.readQuery({ query: QUERY_CART_INFO })
     const itemsForSale = cache.readQuery({ query: QUERY_CARD_LIST })
-    //const newItem = itemsForSale.find(item => item.id === args.id)
+    const newItem = itemsForSale.items.find(item => (item.id === args ? item : 'holiiii'))
       cache.writeData({
         data: {
           cart: {
-            // items: args,
-            // items: cart.items.concat(newItem),
-            // total: cart.total + newItem.price,
-            total: 2344554334,
+            items: cart.items.concat(newItem),
+            total: cart.total + newItem.price,
             __typename: 'cart',
           }
         }
       })
       console.log(args)
-      console.log(itemsForSale)
+      console.log(newItem)
     }
   }
 }
