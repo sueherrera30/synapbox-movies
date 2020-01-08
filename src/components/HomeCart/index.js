@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {IconButton } from '@material-ui/core';
+import Delete from '@material-ui/icons/Delete';
 import QUERY_CART_INFO from './gql';
 import { useQuery } from '@apollo/react-hooks';
 import { withStyles } from '@material-ui/core/styles';
@@ -16,9 +18,18 @@ const HomeCart = (props) => {
       </div>  
       <Typography variant="h5" className={classes.subtitle}>List of selected movies:</Typography>
       <div  className={classes.main}>
-        {data.cart.items.map(item => <p key={item.id}>- {item.title}</p>)}
+        {data.cart.items.map(item => {
+          return (
+            <div className={classes.newItem}>
+              <p key={item.id}>- {item.title}</p>
+              <span>see tetails</span>
+              <IconButton><Delete /></IconButton>
+            </div>
+          )
+        }
+        )}
         <h4>total:</h4>
-        <p>${data.cart.total.toFixed(2)}</p>
+        <p className={classes.total}>${data.cart.total.toFixed(2)}</p>
       </div>
     </div>   
   )
@@ -29,6 +40,8 @@ HomeCart.propTypes = {
     title: PropTypes.string,
     subtitle: PropTypes.string,
     main: PropTypes.string,
+    newItem: PropTypes.string,
+    total: PropTypes.string,
   }).isRequired,
 };
 
