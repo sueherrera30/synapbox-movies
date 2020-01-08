@@ -12,7 +12,7 @@ import { useQuery } from '@apollo/react-hooks';
 const Navbar = (props) => {
   const { classes } = props;
   const { data } = useQuery(QUERY_CART_INFO);
-
+ const counter = data.cart.counter;
   return (
     <div>
       <AppBar position="static" color="secondary" className={classes.container}>
@@ -22,7 +22,9 @@ const Navbar = (props) => {
         </div>
         <div className={classes.infoContainer}>
           <div className={classes.cart}>
-          <span>{data.cart.counter}</span>
+          {
+            counter >= 1 && ( <span>{counter}</span> ) 
+          }
           <IconButton>
             <ShoppingCart className={classes.icon} />
           </IconButton>
